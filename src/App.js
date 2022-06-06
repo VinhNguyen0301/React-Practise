@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-
+// import TimePicker from "rc-time-picker";
+// import "rc-time-picker/assets/index.css";
+// import moment from "moment";
+// import React from "react";
+ import Timepickertest from './test/Timepickertest';
 function App() {
+  // const [dispatchTime, setDispatchTime] = React.useState(moment());
+
+  // const handleValueChange = value => {
+  //   setDispatchTime(value);
+  //   console.log("value" + value);
+  // };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <Timepickertest></Timepickertest>
+      {/* <TimePicker
+        value={dispatchTime}
+        onChange={handleValueChange}
+        showSecond={false}
+        allowEmpty
+      /> */}
     </div>
   );
 }
