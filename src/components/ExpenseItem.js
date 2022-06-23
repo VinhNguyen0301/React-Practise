@@ -1,18 +1,19 @@
 import React from "react";
 import "./ExpenseItem.css";
+import ExpenseDate from "./ExpenseDate";
+import Card from "./Card";
 
-function ExpenseItem() {
-  const expenseDate = new Date(2022, 6, 22);
-  const expenseTitle = "Car Insurrence";
-  const expenseAmount = "$267.67";
+function ExpenseItem(props) {
+  console.log("props", props);
+
   return (
-    <div className="expense-item">
-      <div>{expenseDate.toISOString()}</div>
+    <Card className="expense-item">
+      <ExpenseDate dateChild={props.date} />
       <div className="expense-item__description">
-        <h2>{expenseTitle}</h2>
-        <p className="expense-item__price">{expenseAmount}</p>
+        <h2>{props.title}</h2>
+        <p className="expense-item__price">{props.amount}</p>
       </div>
-    </div>
+    </Card>
   );
 }
 
