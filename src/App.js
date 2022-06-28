@@ -1,6 +1,7 @@
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import Card from "./components/UI/Card";
 
 const App = () => {
   const expenseObj = [
@@ -25,8 +26,10 @@ const App = () => {
 
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenseObj} />
+      <Card className="expenses app-card-background">
+        <NewExpense onAddExpense={addExpenseHandler} />
+        <Expenses items={expenseObj} />
+      </Card>
     </div>
   );
 };
