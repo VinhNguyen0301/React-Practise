@@ -1,8 +1,8 @@
-import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./Expenses.css";
 import ExpensesFilter from "./ExpensesFilter";
 import React, { useState } from "react";
+import ExpenseList from "./ExpenseList";
 
 const Expenses = (props) => {
   const [filterYear, setFilterYear] = useState("2022");
@@ -14,22 +14,6 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filterYear;
   }); // filter return array object by filterYear ,after that use this arr to render UI
 
-  // supper clean code below
-  let espenseContent = <p>No data in database</p>;
-  if (filteredYear.length > 0) {
-    espenseContent =
-      filteredYear.length > 0 &&
-      filteredYear.map((d) => {
-        return (
-          <ExpenseItem
-            key={d.id} // if not have unique id, use index alternative
-            title={d.title}
-            amount={d.amount}
-            date={d.date}
-          />
-        );
-      });
-  }
   return (
     <div>
       <Card className="expenses">
@@ -37,7 +21,7 @@ const Expenses = (props) => {
           selected={filterYear}
           onChangeFilter={onChangeFilterHandler}
         />
-        {espenseContent}
+        <ExpenseList items={filteredYear} />
       </Card>
     </div>
   );
