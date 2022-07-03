@@ -21,13 +21,19 @@ const Dummy_Object = [
     id: "es3",
     title: "Book ",
     amount: "247.67",
-    date: new Date(2020, 7, 24),
+    date: new Date(2022, 8, 24),
   },
   {
     id: "es4",
     title: "Game ",
     amount: "2047.67",
     date: new Date(2022, 7, 25),
+  },
+  {
+    id: "es5",
+    title: "Game 1",
+    amount: "1000",
+    date: new Date(2022, 6, 20),
   },
 ];
 const App = () => {
